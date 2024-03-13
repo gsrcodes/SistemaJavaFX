@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.fipp.projetosisdental.AcompanhamentoFormController">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="600.0">
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <Label text="Relato">
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+            <font>
+               <Font size="13.0" />
+            </font>
+         </Label>
+         <TextArea fx:id="tfRelato" prefHeight="200.0" prefWidth="200.0" />
+         <HBox prefHeight="40.0" prefWidth="560.0">
+            <children>
+               <Label prefHeight="17.0" prefWidth="46.0" text="Material" />
+               <ComboBox fx:id="selectMat" prefWidth="150.0">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </ComboBox>
+               <Label text="Quantidade" textAlignment="CENTER">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </Label>
+               <Spinner fx:id="quanttxf">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </Spinner>
+               <Button fx:id="btnAddMat" mnemonicParsing="false" onAction="#onAdicionarMat" text="Adicionar">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin></Button>
+            </children>
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
+         </HBox>
+         <HBox prefHeight="37.0" prefWidth="560.0">
+            <children>
+               <Label text="Procedimento" />
+               <ComboBox fx:id="selectProc" prefWidth="150.0">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </ComboBox>
+               <Label text="Quantidade">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </Label>
+               <Spinner fx:id="quantProctxf">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </Spinner>
+               <Button fx:id="btnAddProc" mnemonicParsing="false" onAction="#onAdicionarProc" text="Adicionar">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="84.0" prefWidth="560.0" spacing="40.0">
+            <Button fx:id="tfConf" minHeight="30.0" mnemonicParsing="false" onAction="#onConfirmar" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Confirmar" />
+            <Button fx:id="tfCancelar" minHeight="30.0" mnemonicParsing="false" onAction="#onCancelar" prefWidth="90.0" style="-fx-background-color: salmon;" text="Cancelar" />
+         </HBox>
+      </VBox>
+      <TableView fx:id="TableMat" prefHeight="410.0" prefWidth="203.0">
+        <columns>
+          <TableColumn fx:id="colMat" prefWidth="101.0" text="Material" />
+          <TableColumn fx:id="colquant" prefWidth="98.0" text="Quantidade" />
+        </columns>
+      </TableView>
+      <TableView fx:id="TableProc" prefHeight="410.0" prefWidth="237.0">
+        <columns>
+            <TableColumn fx:id="colProc" prefWidth="138.0" text="Procedimento" />
+            <TableColumn fx:id="colQuantidadeProc" prefWidth="98.0" text="Quantidade" />
+        </columns>
+      </TableView>
+   </children>
+</HBox>
